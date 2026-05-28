@@ -25,4 +25,22 @@ public class AppStyle {
    public static final String CARD_STYLE = "-fx-background-color: " + WHITE_COLOR + "; -fx-background-radius: 0; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.05), 10, 0, 0, 5);";
     
    public static final String LOGIN_BUTTON = "-fx-background-color: white; -fx-text-fill: " + NOTSOBLACK_COLOR + "; -fx-padding: 10; -fx-background-radius: 0; -fx-border-color: " + SOFT_GRAY_COLOR + "; -fx-border-radius: 0;";
+
+   public static final String MENU_DASHBOARD_INACTIVE = 
+   "-fx-background-color: transparent;" +
+   "-fx-text-fill: " + WHITE_COLOR + ";" +
+   "-fx-alignment: CENTER_LEFT;" +
+   "-fx-padding: 12 20;" +
+   "-fx-font-weight: bold;" +
+   "-fx-cursor: hand;";
+
+   public static final String MENU_DASHBOARD_ACTIVE = 
+   "-fx-background-color: " + NOTSOWHITE_COLOR + ";" + 
+   "-fx-text-fill: " + BLUE_COLOR + ";" + 
+   "-fx-alignment: CENTER_LEFT;" +
+   "-fx-padding: 12 20;" +
+   "-fx-font-weight: bold;" +
+   "-fx-background-radius: 20 0 0 20;" + 
+   "-fx-cursor: default;";
+   
 }
