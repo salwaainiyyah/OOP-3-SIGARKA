@@ -26,4 +26,28 @@ public class KaryawanRepo {
             e.printStackTrace();
         }
     }
+
+     // ===== MENGHAPUS DARI DATABASE =====
+    public void hapus(String id) {
+        String sqlGaji = "DELETE FROM riwayat_gaji WHERE karyawan_id = ?";
+        String sqlKaryawan = "DELETE FROM karyawan WHERE id = ?";
+        try (Connection conn = KoneksiDatabase.sambung()) {
+             conn.setAutoCommit(false);
+             try (PreparedStatement pstmtG = conn.prepareStatement(sqlGaji);
+                  PreparedStatement pstmtK = conn.prepareStatement(sqlKaryawan)) {
+                 pstmtG.setString(1, id);
+                 pstmtG.executeUpdate();
+                 
+                 pstmtK.setString(1, id);
+                 pstmtK.executeUpdate();
+                 
+                 conn.commit();
+             } catch (SQLException e) {
+                 conn.rollback();
+                 throw e;
+             }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
 }
